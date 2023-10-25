@@ -225,8 +225,13 @@ class _MyHomePageState extends State<QtCareChatRoomMessaging> {
                   print(
                       "attempting to send message $msg to ${widget.receiver} from ${widget.sender} ");
                 }
-                sendPushNotification(_fcmPatient,'New Message',"${widget.sender}: $msg");
-
+                if (kIsWeb) {
+                  // This code will only execute on web devices
+                  print('Running on web!');
+                } else {
+                  sendPushNotification(
+                      _fcmPatient, 'New Message', "${widget.sender}: $msg");
+                }
 
                 _sendMessage();
                 _logText = _logText.toSet().toList();
