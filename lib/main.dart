@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notify_inapp/notify_inapp.dart';
 import 'package:qtcare_therapist/states/form_status.dart';
 import 'package:qtcare_therapist/states/login_state.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'bloc/auth_repo.dart';
 import 'bloc/login_bloc.dart';
@@ -19,8 +18,6 @@ class LoginWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size; //getting the size property
-    final orientation = MediaQuery.of(context).orientation;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -419,21 +416,22 @@ Future<void> main() async {
           "https://qtcare-healthapp-default-rtdb.firebaseio.com/", // Your projectId
     ),
   );
-  FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
-  NotificationSettings settings = await _firebaseMessaging.requestPermission(
-    alert: true,
-    announcement: false,
-    badge: true,
-    carPlay: false,
-    criticalAlert: false,
-    provisional: false,
-    sound: true,
-  );
+
 
   if (kIsWeb) {
     // This code will only execute on web devices
     print('Running on web!');
   } else {
+    FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
+    NotificationSettings settings = await _firebaseMessaging.requestPermission(
+      alert: true,
+      announcement: false,
+      badge: true,
+      carPlay: false,
+      criticalAlert: false,
+      provisional: false,
+      sound: true,
+    );
 
     Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
       // Handle background messages here
