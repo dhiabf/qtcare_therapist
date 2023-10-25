@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "389996433093",
+    "project_id": "qtcare-healthapp",
+    "storage_bucket": "qtcare-healthapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389996433093:android:bfc054daaf1b575b7d2aac",
+        "android_client_info": {
+          "package_name": "com.example.qtcare_mentalhealth_beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "389996433093-2dmv622jliih7449fl0pobn5hn8s6npa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe17Nn64kvHnHsKNeFwIVhGfDXzCUYF0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "389996433093-2dmv622jliih7449fl0pobn5hn8s6npa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
